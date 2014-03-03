@@ -3,7 +3,9 @@
 
 ## Overview
 
-Suppose you are working with a prospect who is excited to use xTuple, but are balking at one critical missing feature. The prospect needs to be able to profile each contact's favorite ice cream flavor. The list of possible ice cream flavors must be fully customizable, and include the calorie count. Furthermore, users must be able to filter contacts by ice cream flavor. This data is going to be the lynchpin of an upcoming multichannel promotional campaign that the prospect is about the wage, and they cannot live without it. Using characteristics is not an option, because they do not want to have to hit the `New` button, and, as we'll see, their requirements are going to end using some fairly sophisticated business logic, which is beyond the scope of simple characteristics.
+Suppose you are working with a prospect who is excited to use xTuple, but is balking at one critical missing feature. The prospect needs to be able to profile each contact's favorite ice cream flavor. The list of possible ice cream flavors must be fully customizable and include the calorie count. Furthermore, users must be able to filter contacts by ice cream flavor. This data is going to be the lynchpin of an upcoming multichannel promotional campaign that the prospect is about to wage, and they cannot live without it. 
+
+Using characteristics is not an option, because they do not want to have to hit the `New` button, and, as we'll see, their requirements are going to end using some fairly sophisticated business logic, which is beyond the scope of simple characteristics.
 
 Getting this to work will touch all of the layers of the xTuple stack. On the server side, we'll have to make a new table and related ORMs. On the client side we'll have to make the model for ice cream flavors, the views and the views to profile them. We'll also have to insert this feature into the pre-existing contact view. 
 
@@ -114,6 +116,8 @@ $ psql -U admin -d dev -c "select * from xt.ext;"
 ```
 
 Now is also a good time to associate this extension with the admin. Any extension can be turned off and on for any user, but by default they're turned off. Load up the webapp and navigate to `Setup`->`User Accounts`->`admin`. You'll see that admin has some extensions already turned on. Click the `icecream` checkbox as well, and save the workspace.
+
+Note: If the client prompts, "you do not have sufficient permissions to ...", check user privileges to make sure the extention is allowed. If the error persists, logout of the client and log back in to finish extention installation.
 
 ***
 
